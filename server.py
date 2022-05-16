@@ -7,6 +7,9 @@ import time
 # read file to extract IP and connections
 with open('address/address_server.txt') as fh:
     fstring = fh.readlines()
+
+print(fstring)
+
 # declaring the regex pattern for IP addresses
 pattern_ip = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})')
 # initializing the list object
