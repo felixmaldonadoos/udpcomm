@@ -1,6 +1,7 @@
 import sys
 import re
 import socket
+import time
 
 # read file to extract IP and connections
 with open('address.txt') as fh:
@@ -18,8 +19,10 @@ server_address = (UDP_IP, UDP_PORT)
 while True:
     print("####### Server is listening #######")
     data, address = s.recvfrom(4096)
+    RECVTIME = time.time()
     # print recvd data
-    print("\n\n 2. Server received: ", data.decode('utf-8'), "\n\n")
+    print("\n 2. Server received: ", data.decode('utf-8'), "\n")
+    ELAPSEDTIME = round((time.time() - RECVTIME)*(10**3),4) # return time in ms
     # send back same packet to confirm. 
     s.sendto(data, address)
-    print("\n\n 1. Server sent : ", data,"\n\n")
+    print("\n 1. Server sent : ", data,"\n")
