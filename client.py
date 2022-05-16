@@ -23,15 +23,15 @@ print("\nConnecting to:\n",f"IP: {UDP_IP}\n Port: {UDP_PORT}" )
 # (type msg > collect time > send > recv > collect time > output elapsed time)
 while True:
     # send data
-    send_data = input("Type some text to send =>");
+    send_data = input("Type some text to send => ");
     SENDTIME  = time.time()
     s.sendto(send_data.encode('utf-8'), (UDP_IP, UDP_PORT))
-    print("\n\n 1. Client Sent : ", send_data, "\n")
+    print("1. Client Sent : ", send_data)
 
     # recv data
     data, address = s.recvfrom(4096) # packet size (bytes)
     ELAPSEDTIME   = round((time.time() - SENDTIME)*(10**3),4) # return time in ms
-    print("\n\n 2. Client received : ", data.decode('utf-8'), "\n", 
+    print("2. Client received : ", data.decode('utf-8'), "\n", 
     f"time to send and recieve: {ELAPSEDTIME} ms")
 # close the socket
 s.close()

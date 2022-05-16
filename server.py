@@ -25,13 +25,13 @@ print("Do Ctrl+c to exit the program !!")
 # start UDP server 
 # (recv > collect time > send > collect time > output elapsed time)
 while True:
-    print("####### Server is listening #######") 
+    print("Server is listening...\n") 
     data, address = s.recvfrom(4096)
     RECVTIME = time.time()
     # print recvd data
-    print("\n\n 2. Server received: ", data.decode('utf-8'), "\n")
+    print("2. Server received: ", data.decode('utf-8'))
     # send back same packet to confirm. 
     s.sendto(data, address)
     ELAPSEDTIME = round((time.time() - RECVTIME)*(10**3),4) # return time in ms
-    print("\n\n 1. Server sent : ", data,"\n",
+    print("1. Server sent : ", data,"\n",
     f"time to recieve and send: {ELAPSEDTIME} ms")
