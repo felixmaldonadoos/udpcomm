@@ -14,7 +14,6 @@ print(f"IP: {UDP_IP}\nPort: {UDP_PORT}" )
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 # Bind the socket to the port
 server_address = (UDP_IP, UDP_PORT)
-	@@ -17,7 +21,8 @@
 while True:
     print("####### Server is listening #######")
     data, address = s.recvfrom(4096)
