@@ -7,3 +7,6 @@ UDP server and client example. Sends UDP (client to server) packet (must be on s
 # address/address.txt
 - ```UDP IP:``` Add server (host) IP address. You can find this in network settings. Windows > Network settings, Linux ```ifconfig``` on terminal. 
 - ```UDP Port:``` Self-determined port. 
+
+# How to run: 
+I ran ```server.py``` on my Raspberry Pi on and ran ```client.py``` on my personal computer. 
