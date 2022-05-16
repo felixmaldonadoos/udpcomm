@@ -1,0 +1,6 @@
+# this is address file is FOR the server. 
+# write down address and port of cleint computer.
+# this is used to send back a packet recvd confirmation 
+
+UDP IP: 10.0.0.92 # my pc
+HOST PORT: 5678

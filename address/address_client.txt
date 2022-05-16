@@ -1,0 +1,5 @@
+# this is address file is FOR the client. 
+# write down address and port of host/target computer. 
+
+UDP IP: 10.0.0.146 # raspi address @ apt
+HOST PORT: 5678
