@@ -3,7 +3,6 @@ import sys
 import re
 import time
 
-from client import SENDTIME
 
 # read file to extract IP and connections
 with open('address.txt') as fh:

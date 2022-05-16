@@ -22,7 +22,7 @@ while True:
     RECVTIME = time.time()
     # print recvd data
     print("\n 2. Server received: ", data.decode('utf-8'), "\n")
-    ELAPSEDTIME = round((time.time() - RECVTIME)*(10**3),4) # return time in ms
     # send back same packet to confirm. 
-    s.sendto(data, address)
+    #s.sendto(data, address)
+    ELAPSEDTIME = round((time.time() - RECVTIME)*(10**3),4) # return time in ms
     print("\n 1. Server sent : ", data,"\n")
