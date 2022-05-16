@@ -22,7 +22,7 @@ s.bind(server_address)
 print("Do Ctrl+c to exit the program !!")
 
 while True:
-    print("####### Server is listening #######")
+    print("####### Server is listening #######") 
     data, address = s.recvfrom(4096)
     RECVTIME = time.time()
     # print recvd data
