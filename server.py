@@ -1,5 +1,6 @@
 import socket
 import sys
+import re
 
 # declaring the regex pattern for IP addresses
 pattern_ip = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})')

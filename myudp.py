@@ -1,5 +1,6 @@
 import socket
 import sys
+import re
 
 # algorithm: 
 # 1. connect
