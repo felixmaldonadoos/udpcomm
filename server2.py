@@ -1,5 +1,6 @@
 import sys
 import re
+import socket
 
 # read file to extract IP and connections
 with open('address.txt') as fh:
