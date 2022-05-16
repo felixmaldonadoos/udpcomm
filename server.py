@@ -3,7 +3,6 @@ import sys
 import re
 import time
 
-
 # read file to extract IP and connections
 with open('address/address.txt') as fh:
     fstring = fh.readlines()
@@ -23,6 +22,8 @@ server_address = (UDP_IP, UDP_PORT)
 s.bind(server_address)
 print("Do Ctrl+c to exit the program !!")
 
+# start UDP server 
+# (recv > collect time > send > collect time > output elapsed time)
 while True:
     print("####### Server is listening #######") 
     data, address = s.recvfrom(4096)
