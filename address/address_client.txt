@@ -1,2 +1,2 @@
-UDP IP: 10.0.0.146 # raspi address @ apt
+UDP IP: 10.0.0.92 # raspi address @ apt
 HOST PORT: 5678

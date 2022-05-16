@@ -1,2 +1,2 @@
-UDP IP: 10.0.0.92 # my pc
+UDP IP: 10.0.0.146 # my pc
 HOST PORT: 5678
