@@ -13,7 +13,7 @@ pattern_ip = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})')
 UDP_IP = pattern_ip.search(fstring[0])[0] # find ip
 UDP_PORT = int(re.findall('[0-9]+', fstring[1])[0]) # find port num
 # Create a UDP socket
-print(f"IP: {UDP_IP}\nPort: {UDP_PORT}" )
+print(f"Host IP: {UDP_IP}\nHost Port: {UDP_PORT}" )
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 # Bind the socket to the port
 server_address = (UDP_IP, UDP_PORT)

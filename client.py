@@ -15,7 +15,7 @@ UDP_PORT = int(re.findall('[0-9]+', fstring[1])[0]) # find port num
 # Create socket for server
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
 print("Do Ctrl+c to exit the program !!")
-
+print("\nConnecting to:\n",f"IP: {UDP_IP}\n Port: {UDP_PORT}" )
 # Let's send data through UDP protocol
 while True:
     send_data = input("Type some text to send =>");
