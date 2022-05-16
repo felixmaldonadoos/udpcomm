@@ -4,7 +4,7 @@ import re
 import time
 
 # read file to extract IP and connections
-with open('address/address_client.txt') as fh:
+with open('address/address.txt') as fh:
     fstring = fh.readlines()
 # declaring the regex pattern for IP addresses
 pattern_ip = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})')
@@ -18,6 +18,11 @@ print("Do Ctrl+c to exit the program !!")
 print("\nConnecting to:\n",f"IP: {UDP_IP}\n Port: {UDP_PORT}" )
 # Let's send data through UDP protocol
 while True:
+
+    if KeyboardInterrupt: 
+        s.close()
+        print("closing...")
+
     send_data = input("Type some text to send =>");
     SENDTIME = time.time()
     s.sendto(send_data.encode('utf-8'), (UDP_IP, UDP_PORT))
