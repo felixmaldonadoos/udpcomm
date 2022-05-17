@@ -26,7 +26,7 @@ print("\nConnecting to:\n",f"IP: {UDP_IP}\n Port: {UDP_PORT}\n" )
 # (type msg > collect time > send > recv > collect time > output elapsed time)
 STARTTIME = time.time()
 timestamps = []
-for i in range(0,100):
+for i in range(0,50):
     # send data
     send_data ="A"
     SENDTIME  = time.time()
