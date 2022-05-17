@@ -4,6 +4,7 @@ import re
 from datetime import datetime
 import time
 import numpy as np
+import pandas as pd
 
 # read file to extract IP and connections
 with open('address/address.txt') as fh:
@@ -42,6 +43,6 @@ print("saving to csv...")
 p = "data/"+datetime.today().strftime('%Y-%m-%d %H:%M:%S') + ".csv" # file with today's datetime
 p = re.sub(r"\s",'_',p)
 filename = re.sub(r":",'-',p) # sub any whitespace with underscore
-file = np.asarray(timestamps) # HH:MM:SS in .csv name causes github fetch request error
-np.savetxt(filename, file, delimiter=",")
+arr = np.asarray(timestamps) # HH:MM:SS in .csv name causes github fetch request error
+pd.DataFrame(arr).to_excel(filename,index=False)
 s.close()
