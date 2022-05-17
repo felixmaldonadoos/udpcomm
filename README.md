@@ -4,12 +4,6 @@ UDP server and client example. Sends UDP (client to server) packet (must be on s
 ```client.py``` outputs time elapsed to send and receieve packet. 
 ```server.py``` outputs time elapsed to receive and send packet. 
 
-# address/address.txt
-- ```UDP IP:``` Add server (host) IP address. You can find this in network settings. Windows > Network settings, Linux ```ifconfig``` on terminal. 
-- ```UDP Port:``` Self-determined port. 
-
-# How to run: 
-I ran ```server.py``` on my Raspberry Pi on and ran ```client.py``` on my personal computer. 
 
 # Outputs: 
 
@@ -38,3 +32,10 @@ Server is listening...
 1. Server sent :  b'test!' 
  time to recieve and send: 0.2725 ms
 ```
+
+# How to run: 
+I ran ```server.py``` on my Raspberry Pi on and ran ```client.py``` on my personal computer. 
+
+# address/address.txt
+- ```UDP IP:``` Add server (host) IP address. You can find this in network settings. Windows > Network settings, Linux ```ifconfig``` on terminal. 
+- ```UDP Port:``` Self-determined port. 
