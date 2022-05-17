@@ -40,7 +40,7 @@ for i in range(0,100):
 print("saving to csv...")
 
 
-p = "data/"+datetime.today().strftime('%Y-%m-%d %H:%M:%S') + ".csv" # file with today's datetime
+p = "data/"+datetime.today().strftime('%Y-%m-%d %H:%M:%S')  # file with today's datetime
 p = re.sub(r"\s",'_',p)
 filename = re.sub(r":",'-',p) # sub any whitespace with underscore
 arr = np.asarray(timestamps) # HH:MM:SS in .csv name causes github fetch request error
