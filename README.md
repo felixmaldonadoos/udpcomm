@@ -26,8 +26,6 @@ Type some text to send => test!
 2. Client received :  test!
  time to send and recieve: 39.9439 ms
 ```
-
-
 ```
 # server.py
 
@@ -39,4 +37,4 @@ Server is listening...
 2. Server received:  test!
 1. Server sent :  b'test!' 
  time to recieve and send: 0.2725 ms
-Server is listening...```
+```
