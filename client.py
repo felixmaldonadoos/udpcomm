@@ -40,9 +40,9 @@ for i in range(0,100):
 print("saving to csv...")
 
 
-p = datetime.today().strftime('%Y-%m-%d %H:%M:%S') + ".xlsx" # file with today's datetime
-p = re.sub(r"\s",'_',p)
-filename = re.sub(r":",'-',p) # sub any whitespace with underscore
+filename = datetime.today().strftime('%Y-%m-%d %H:%M:%S') + ".xlsx" # file with today's datetime
+filename = re.sub(r"\s",'_',filename) # sub any whitespace with underscore
+filename = re.sub(r":",'-',filename) # HH:MM:SS in .csv name causes github fetch request error
 arr = np.asarray(timestamps) # HH:MM:SS in .csv name causes github fetch request error
 pd.DataFrame(arr).to_excel(filename,index=False)
 s.close()
