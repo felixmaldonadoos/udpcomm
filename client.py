@@ -26,7 +26,7 @@ for i in range(0,100):
     send_data ="A"
     SENDTIME  = time.time()
     s.sendto(send_data.encode('utf-8'), (UDP_IP, UDP_PORT))
-    print("{i} : ", send_data)
+    print(f"{i} : ", send_data)
 
     ELAPSEDTIME   = round((time.time() - SENDTIME)*(10**3),4) # return time in ms
     print(ELAPSEDTIME)
