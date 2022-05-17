@@ -34,7 +34,7 @@ for i in range(0,100):
     ELAPSEDTIME   = (time.time() - SENDTIME)*(10**3) # return time in ms
     timestamps.append(ELAPSEDTIME)
     print(f"{i} : ", send_data)
-    print(round(ELAPSEDTIME,4))
+    print(ELAPSEDTIME)
     time.sleep(0.2)
 # close the socket
 print("saving to csv...")
