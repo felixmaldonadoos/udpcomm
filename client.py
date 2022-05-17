@@ -6,7 +6,7 @@ import time
 import numpy as np
 import pandas as pd
 
-# read file to extract IP and connections
+# read file to extract IP and port
 with open('address/address.txt') as fh:
     fstring = fh.readlines()
 
@@ -26,23 +26,25 @@ print("\nConnecting to:\n",f"IP: {UDP_IP}\n Port: {UDP_PORT}\n" )
 # (type msg > collect time > send > recv > collect time > output elapsed time)
 STARTTIME = time.time()
 timestamps = []
-for i in range(0,50):
+for i in range(0,100):
     # send data
     send_data ="A"
     SENDTIME  = time.time()
     s.sendto(send_data.encode('utf-8'), (UDP_IP, UDP_PORT))
+
+    # save timestamp
     ELAPSEDTIME   = (SENDTIME - STARTTIME) # return time in ms
     timestamps.append(ELAPSEDTIME)
-    print(f"{i} : ", send_data)
-    print(ELAPSEDTIME)
+    print(f"{i}:", send_data, "time:", ELAPSEDTIME)
     time.sleep(0.2)
+
 # close the socket
+s.close()
+
+# save to csv
 print("saving to csv...")
-
-
 filename = datetime.today().strftime('%Y-%m-%d %H:%M:%S') + ".xlsx" # file with today's datetime
 filename = re.sub(r"\s",'_',filename) # sub any whitespace with underscore
 filename = re.sub(r":",'-',filename) # HH:MM:SS in .csv name causes github fetch request error
 arr = np.asarray(timestamps) # HH:MM:SS in .csv name causes github fetch request error
 pd.DataFrame(arr).to_excel(filename,index=False)
-s.close()
