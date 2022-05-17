@@ -23,7 +23,7 @@ print("\nConnecting to:\n",f"IP: {UDP_IP}\n Port: {UDP_PORT}\n" )
 # (type msg > collect time > send > recv > collect time > output elapsed time)
 for i in range(0,100):
     # send data
-    send_data = input("Type some text to send => ");
+    send_data ="A"
     SENDTIME  = time.time()
     s.sendto(send_data.encode('utf-8'), (UDP_IP, UDP_PORT))
     print("{i} : ", send_data)
