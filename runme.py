@@ -19,4 +19,4 @@ sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
 while True:
   # For Python 3, change next line to "print(sock.recv(10240))"
-  print sock.recv(10240)
+  print(sock.recv(10240))
