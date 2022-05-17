@@ -39,7 +39,9 @@ for i in range(0,100):
 print("saving to csv...")
 
 
-filename = "data/"+datetime.today().strftime('%Y-%m-%d %H:%M:%S') + ".csv" # file with today's datetime
-file = np.asarray(timestamps)
+p = "data/"+datetime.today().strftime('%Y-%m-%d %H:%M:%S') + ".csv" # file with today's datetime
+p = re.sub(r"\s",'_',p)
+filename = re.sub(r":",'-',p) # sub any whitespace with underscore
+file = np.asarray(timestamps) # HH:MM:SS in .csv name causes github fetch request error
 np.savetxt(filename, file, delimiter=",")
 s.close()
