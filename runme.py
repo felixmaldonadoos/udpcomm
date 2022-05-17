@@ -17,6 +17,8 @@ mreq = struct.pack("4sl", socket.inet_aton(MCAST_GRP), socket.INADDR_ANY)
 
 sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
-while True:
+try:
   # For Python 3, change next line to "print(sock.recv(10240))"
   print(sock.recv(10240))
+except KeyboardInterrupt:
+    print("closed")
