@@ -1,4 +1,5 @@
 from http.client import ImproperConnectionState
+from os import times
 import socket
 import sys
 import re
@@ -25,14 +26,14 @@ print("\nConnecting to:\n",f"IP: {UDP_IP}\n Port: {UDP_PORT}\n" )
 # start UDP 
 # (type msg > collect time > send > recv > collect time > output elapsed time)
 STARTTIME = time.time()
+timestamps = []
 for i in range(0,100):
     # start at 0
-    timestamps = [0]
     # send data
     send_data = ("A")
     SENDTIME  = time.time()
     s.sendto(send_data.encode('utf-8'), (UDP_IP, UDP_PORT))
-    print("1. Client Sent : ", send_data)
+    print(f"{i}.", send_data)
 
     ELAPSEDTIME   = round((SENDTIME - STARTTIME)*(10**3),4) # return time in ms
     print(f"time to send and recieve: {ELAPSEDTIME} ms\n")
@@ -40,6 +41,7 @@ for i in range(0,100):
     time.sleep(0.5)
 
 print("saving..")
-file = pd.DataFrame(np.asarray(timestamps)).to_excel("data/testdata.xlsx",index = False)
+pd.DataFrame(np.asarray(timestamps)).to_excel("data/testdata.xlsx",index = False)
+np.savetxt(np.asarray(timestamps))
 # close the socket
 s.close()
