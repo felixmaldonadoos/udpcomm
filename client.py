@@ -1,7 +1,9 @@
 import socket
 import sys
 import re
+from datetime import datetime
 import time
+import numpy as np
 
 # read file to extract IP and connections
 with open('address/address.txt') as fh:
@@ -34,4 +36,10 @@ for i in range(0,100):
     print(round(ELAPSEDTIME,4))
     time.sleep(0.2)
 # close the socket
+print("saving to csv...")
+
+
+filename = "data/"+datetime.today().strftime('%Y-%m-%d %H:%M:%S') + ".csv" # file with today's datetime
+file = np.asarray(timestamps)
+np.savetxt(filename, file, delimiter=",")
 s.close()
