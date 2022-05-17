@@ -22,15 +22,16 @@ print("\nConnecting to:\n",f"IP: {UDP_IP}\n Port: {UDP_PORT}\n" )
 # start UDP 
 # (type msg > collect time > send > recv > collect time > output elapsed time)
 STARTTIME = time.time()
+timestamps = []
 for i in range(0,100):
     # send data
     send_data ="A"
     SENDTIME  = time.time()
     s.sendto(send_data.encode('utf-8'), (UDP_IP, UDP_PORT))
-    ELAPSEDTIME   = round((time.time() - SENDTIME)*(10**3),4) # return time in ms
-    
+    ELAPSEDTIME   = (time.time() - SENDTIME)*(10**3)) # return time in ms
+    timestamps.append(ELAPSEDTIME)
     print(f"{i} : ", send_data)
-    print(ELAPSEDTIME)
+    print(round(ELAPSEDTIME,4))
     time.sleep(0.2)
 # close the socket
 s.close()
